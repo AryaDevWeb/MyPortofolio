@@ -1,17 +1,19 @@
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #f59e0b;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f8fafc;
-    --bg-dark: #0f172a;
-    --card-bg: #ffffff;
-    --border-color: #e5e7eb;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
-    --border-radius: 16px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary: #3b82f6;
+    --secondary: #1e293b;
+    --accent: #f8fafc;
+    --surface: #ffffff;
+
+    --primary-hover: #2563eb;
+    --primary-light: #dbeafe;
+    --border-color: #e2e8f0;
+    --text-light: #64748b;
+    --text-muted: #94a3b8;
+
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.2s ease-in-out;
 }
 
 * {
@@ -39,7 +41,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--surface);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -59,7 +61,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -75,7 +77,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--secondary);
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 8px;
@@ -84,7 +86,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--primary);
     background: rgba(37, 99, 235, 0.1);
 }
 
@@ -94,7 +96,7 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--text-dark);
+    color: var(--secondary);
     padding: 0.5rem;
 }
 
@@ -105,21 +107,14 @@ body {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem 4rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary);
     color: white;
     position: relative;
     overflow: hidden;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    content: none;
 }
 
 .hero-content {
@@ -132,10 +127,7 @@ body {
     font-size: clamp(3rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #ffffff, #f0f9ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white;
 }
 
 .hero p {
@@ -166,14 +158,14 @@ body {
 }
 
 .btn-primary {
-    background: var(--accent-color);
-    color: white;
+    background: white;
+    color: var(--primary);
 }
 
 .btn-primary:hover {
-    background: #d97706;
+    background: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-outline {
@@ -184,13 +176,12 @@ body {
 
 .btn-outline:hover {
     background: white;
-    color: var(--primary-color);
+    color: var(--primary);
     transform: translateY(-2px);
 }
 
-/* Main Content */
 .main {
-    background: var(--bg-light);
+    background: var(--accent);
     position: relative;
 }
 
@@ -212,7 +203,7 @@ body {
 .section-title h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    color: var(--text-dark);
+    color: var(--secondary);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -226,7 +217,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background: var(--primary);
     border-radius: 2px;
 }
 
@@ -238,7 +229,7 @@ body {
 }
 
 .card {
-    background: var(--card-bg);
+    background: var(--surface);
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -271,7 +262,7 @@ body {
 
 .about-text h3 {
     font-size: 1.5rem;
-    color: var(--text-dark);
+    color: var(--secondary);
     margin-bottom: 1rem;
 }
 
@@ -289,7 +280,7 @@ body {
 }
 
 .skill-tag {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -310,20 +301,20 @@ body {
 
 .project-image {
     height: 200px;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-light);
     border-radius: var(--border-radius);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--primary);
     font-size: 3rem;
 }
 
 .project-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: var(--text-dark);
+    color: var(--secondary);
 }
 
 .project-card p {
@@ -340,14 +331,14 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .project-link:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-hover);
 }
 
 .blog-grid {
@@ -361,7 +352,7 @@ body {
 }
 
 .blog-date {
-    color: var(--accent-color);
+    color: var(--primary);
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -370,7 +361,7 @@ body {
 .blog-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: var(--text-dark);
+    color: var(--secondary);
 }
 
 .blog-card h3 a {
@@ -380,11 +371,11 @@ body {
 }
 
 .blog-card h3 a:hover {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .contact {
-    background: linear-gradient(135deg, var(--text-dark) 0%, #374151 100%);
+    background: var(--secondary);
     color: white;
 }
 
@@ -416,7 +407,7 @@ body {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--accent-color);
+    color: var(--primary);
     width: 40px;
     text-align: center;
 }
