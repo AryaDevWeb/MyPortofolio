@@ -289,14 +289,16 @@ body {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
 .project-card {
-    position: relative;
-    overflow: hidden;
+    flex: 0 1 calc(50% - 1rem);
+    min-width: 300px;
+    max-width: 450px;
 }
 
 .project-image {
