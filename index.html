@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portofolio Angga Ariya Saputra - Full Stack Web Developer dari SMKN 1 Lumajang.">
-    <meta name="keywords" content="web developer, fullstack, PHP, HTML, CSS, JavaScript, portfolio">
+    <meta name="keywords"
+        content="web developer, fullstack, PHP, HTML, CSS, JavaScript, Web3, Blockchain, Hardhat, Node.js, portfolio">
     <meta name="author" content="Angga Ariya Saputra">
     <title>Angga Ariya Saputra | Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +67,7 @@
                 <div class="about-content">
                     <div class="about-image">
                         <div class="profile-placeholder">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user-astronaut"></i>
                         </div>
                     </div>
                     <div class="about-text">
@@ -187,6 +188,37 @@
             <p>&copy; 2025 Angga Ariya Saputra. Dibuat dengan HTML & CSS.</p>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    </script>
 </body>
 
 </html>
