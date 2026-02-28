@@ -1,15 +1,12 @@
 :root {
     --primary: #1e40af;
-    /* Dark Blue */
     --primary-light: #eff6ff;
     --primary-dark: #1e3a8a;
     --secondary: #0f172a;
-    /* Slate 900 */
     --accent: #f1f5f9;
     --surface: #ffffff;
     --border-color: #e2e8f0;
     --text-light: #334155;
-    /* Increased contrast for accessibility */
     --text-muted: #64748b;
     --success: #10b981;
     --white: #ffffff;
@@ -117,7 +114,6 @@ body {
     text-align: center;
     padding: 8rem 2rem 6rem;
     background: #0f172a;
-    /* Solid Dark Blue */
     color: white;
     position: relative;
     overflow: hidden;
@@ -213,7 +209,7 @@ body {
 .section-title h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    color: var(--secondary);
+    color: var(--white);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -389,7 +385,6 @@ body {
     color: var(--secondary-hover);
 }
 
-/* Removed unused blog-grid, blog-card and contact-form styles */
 .contact {
     background: var(--secondary);
     color: white;
@@ -436,7 +431,6 @@ body {
 
 .footer {
     background: #020617;
-    /* Darker Slate */
     color: #94a3b8;
     text-align: center;
     padding: 4rem 0;
