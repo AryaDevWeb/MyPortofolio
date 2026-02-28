@@ -14,12 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 
 <body>
 
-    <header class="header">
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
         <div class="nav-container">
             <a href="#" class="logo">
                 <i class="fas fa-code"></i>
@@ -32,23 +33,23 @@
                     <li><a href="#kontak" class="nav-link">Kontak</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-content">
             <h1>Angga Ariya Saputra</h1>
             <p>Full Stack Web Developer | Siswa RPL SMKN 1 Lumajang</p>
             <div class="hero-buttons">
-                <a href="#proyek" class="btn btn-primary">
+                <a href="#proyek" class="btn btn-primary" id="btnViewProjects">
                     <i class="fas fa-eye"></i>
                     Lihat Proyek
                 </a>
-                <a href="#kontak" class="btn btn-outline">
+                <a href="#kontak" class="btn btn-outline" id="btnContact">
                     <i class="fas fa-envelope"></i>
                     Hubungi Saya
                 </a>
@@ -56,21 +57,23 @@
         </div>
     </section>
 
-
+    <!-- ===== MAIN CONTENT ===== -->
     <main class="main">
+
+        <!-- Tentang Saya -->
         <section id="tentang" class="section">
             <div class="container">
-                <div class="section-title">
+                <div class="section-title fade-in">
                     <h2>Tentang Saya</h2>
                     <p>Pelajar yang passionate dalam dunia web development</p>
                 </div>
                 <div class="about-content">
-                    <div class="about-image">
+                    <div class="about-image fade-in">
                         <div class="profile-placeholder">
                             <i class="fas fa-user-astronaut"></i>
                         </div>
                     </div>
-                    <div class="about-text">
+                    <div class="about-text fade-in fade-in-delay-1">
                         <h3>Hello, Saya Angga!</h3>
                         <p>
                             Saya adalah siswa di SMKN 1 Lumajang jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki
@@ -98,15 +101,15 @@
             </div>
         </section>
 
-
+        <!-- Proyek -->
         <section id="proyek" class="section projects-section">
             <div class="container">
-                <div class="section-title">
+                <div class="section-title fade-in">
                     <h2>Proyek Saya</h2>
                     <p>Beberapa proyek yang telah saya kerjakan</p>
                 </div>
                 <div class="projects-grid">
-                    <div class="card project-card">
+                    <div class="card project-card fade-in">
                         <div class="project-image">
                             <i class="fas fa-server"></i>
                         </div>
@@ -115,13 +118,13 @@
                             Menggunakan currency symbol CLD sebagai biaya transaksi.</p>
                         <div class="project-links">
                             <a href="https://aryadevweb.github.io/web3_cloud_storage/" class="project-link"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i>
                                 Lihat Proyek
                             </a>
                         </div>
                     </div>
-                    <div class="card project-card">
+                    <div class="card project-card fade-in fade-in-delay-1">
                         <div class="project-image">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -138,14 +141,14 @@
             </div>
         </section>
 
-
+        <!-- Kontak -->
         <section id="kontak" class="section contact">
             <div class="container">
-                <div class="section-title">
+                <div class="section-title fade-in">
                     <h2>Hubungi Saya</h2>
                     <p>Mari berkolaborasi dan wujudkan ide-ide kreatif bersama</p>
                 </div>
-                <div class="contact-content centered">
+                <div class="contact-content centered fade-in fade-in-delay-1">
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -172,53 +175,26 @@
                 </div>
             </div>
         </section>
+
     </main>
 
-
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/aryadevweb" class="social-link" target="_blank">
+                <a href="https://github.com/aryadevweb" class="social-link" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:angga.ariya.dev@gmail.com" class="social-link">
+                <a href="mailto:angga.ariya.dev@gmail.com" class="social-link" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p>&copy; 2025 Angga Ariya Saputra. Dibuat dengan HTML & CSS.</p>
+            <p>&copy; 2026 Angga Ariya Saputra. Dibuat dengan HTML &amp; CSS.</p>
         </div>
     </footer>
 
-    <script>
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
